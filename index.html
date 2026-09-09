@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warden Security | Your partner for professional security solutions</title>
+<style>
+  :root{
+    --navy:#0d2b4e;
+    --blue:#12579e;
+    --blue-bright:#3a9be0;
+    --ink:#1a2634;
+    --muted:#5a6b7d;
+    --bg:#ffffff;
+    --bg-soft:#f4f7fa;
+    --line:#e2e8f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg)}
+  h1,h2,h3{font-family:Georgia,'Times New Roman',serif;color:var(--navy);line-height:1.2}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--blue);color:#fff;padding:14px 30px;border-radius:6px;font-weight:600;font-size:15px;transition:background .2s,transform .2s;border:none;cursor:pointer}
+  .btn:hover{background:var(--navy);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
+  .btn-ghost:hover{background:#fff;color:var(--navy)}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:100}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1140px;margin:0 auto}
+  .logo{height:70px}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{font-size:15px;font-weight:500;color:var(--ink);transition:color .2s}
+  .navlinks a:hover{color:var(--blue)}
+  .navlinks .btn{color:#fff;padding:10px 22px}
+  .navlinks .btn:hover{color:#fff}
+  .burger{display:none;font-size:26px;background:none;border:none;color:var(--navy);cursor:pointer}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(135deg,#0d2b4e 0%,#12579e 60%,#1c6bc0 100%);color:#fff;padding:100px 0 90px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(58,155,224,.35),transparent 65%);pointer-events:none}
+  .hero-inner{position:relative;z-index:2;max-width:760px}
+  .hero h1{color:#fff;font-size:48px;margin-bottom:20px}
+  .hero p{font-size:20px;opacity:.94;margin-bottom:34px;max-width:620px}
+  .hero .btns{display:flex;gap:16px;flex-wrap:wrap}
+  .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:7px 16px;border-radius:30px;font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:26px}
+
+  /* ---------- Trust bar ---------- */
+  .trust{background:var(--navy);color:#fff;padding:22px 0}
+  .trust .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center}
+  .trust .item{font-size:14px;opacity:.9}
+  .trust .item b{display:block;font-family:Georgia,serif;font-size:26px;color:var(--blue-bright);margin-bottom:2px}
+
+  /* ---------- Sections ---------- */
+  section{padding:84px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 54px}
+  .section-head .kicker{color:var(--blue);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+  .section-head h2{font-size:36px;margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:17px}
+
+  /* ---------- Services ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:34px 28px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(13,43,78,.10);border-color:transparent}
+  .card .ico{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-bright));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .card .ico svg{width:28px;height:28px;fill:#fff}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+
+  /* ---------- Why / features ---------- */
+  .why{background:var(--bg-soft)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .why-list{list-style:none}
+  .why-list li{display:flex;gap:16px;margin-bottom:24px}
+  .why-list .check{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+  .why-list h4{font-family:Georgia,serif;color:var(--navy);font-size:18px;margin-bottom:3px}
+  .why-list p{color:var(--muted);font-size:15px}
+  .why-visual{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:16px;padding:48px;color:#fff;min-height:340px;display:flex;flex-direction:column;justify-content:center}
+  .why-visual h3{color:#fff;font-size:26px;margin-bottom:16px}
+  .why-visual p{opacity:.9;margin-bottom:26px}
+  .why-visual .stat{font-family:Georgia,serif;font-size:44px;color:var(--blue-bright);font-weight:700}
+
+  /* ---------- Compliance strip ---------- */
+  .compliance{background:linear-gradient(135deg,#0d2b4e,#12579e);color:#fff;text-align:center}
+  .compliance h2{color:#fff;font-size:32px;margin-bottom:16px}
+  .compliance p{max-width:680px;margin:0 auto 30px;opacity:.94;font-size:17px}
+
+  /* ---------- Pricing ---------- */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+  .price{background:#fff;border:1px solid var(--line);border-radius:14px;padding:36px 30px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .price:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(13,43,78,.10)}
+  .price.featured{border:2px solid var(--blue);position:relative}
+  .price.featured::before{content:"Most Popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:.5px}
+  .price h3{font-size:22px;margin-bottom:6px}
+  .price .desc{color:var(--muted);font-size:14px;margin-bottom:20px;min-height:40px}
+  .price .amount{font-family:Georgia,serif;font-size:40px;color:var(--navy);font-weight:700}
+  .price .amount span{font-size:16px;color:var(--muted);font-weight:400}
+  .price ul{list-style:none;margin:22px 0 26px;flex-grow:1}
+  .price li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);display:flex;gap:10px}
+  .price li::before{content:"✓";color:var(--blue);font-weight:700}
+  .price .btn{width:100%;text-align:center}
+  .price-note{text-align:center;color:var(--muted);font-size:14px;margin-top:30px}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--bg-soft)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact-info h3{font-size:26px;margin-bottom:18px}
+  .contact-info p{color:var(--muted);margin-bottom:26px}
+  .contact-item{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+  .contact-item .ci{width:44px;height:44px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-item .ci svg{width:20px;height:20px;fill:#fff}
+  .contact-item b{display:block;color:var(--navy)}
+  .contact-item span{color:var(--muted);font-size:15px}
+  form{background:#fff;padding:36px;border-radius:14px;border:1px solid var(--line)}
+  form label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;margin-bottom:18px;font-size:15px;font-family:inherit}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--blue)}
+  form .btn{width:100%}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#fff;padding:50px 0 30px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:34px}
+  .foot-brand{max-width:320px}
+  .foot-brand .logo-foot{height:50px;margin-bottom:16px}
+  .foot-brand p{opacity:.75;font-size:14px}
+  .foot-col h4{font-family:Georgia,serif;font-size:16px;margin-bottom:14px;color:#fff}
+  .foot-col a{display:block;opacity:.75;font-size:14px;margin-bottom:9px;transition:opacity .2s}
+  .foot-col a:hover{opacity:1}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;text-align:center;opacity:.6;font-size:13px}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .grid,.price-grid{grid-template-columns:1fr}
+    .why-grid,.contact-grid{grid-template-columns:1fr}
+    .hero h1{font-size:36px}
+    .hero p{font-size:18px}
+    .navlinks{display:none;position:absolute;top:100px;left:0;right:0;background:#fff;flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+    .navlinks.open{display:flex}
+    .burger{display:block}
+    section{padding:60px 0}
+    .section-head h2{font-size:29px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <svg class="logo" viewBox="0 0 600 190" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="edgeH" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#3a9be0"/><stop offset="0.45" stop-color="#12579e"/><stop offset="1" stop-color="#04162e"/></linearGradient>
+        <linearGradient id="faceH" x1="0" y1="0" x2="0.8" y2="0.9"><stop offset="0" stop-color="#123a6e"/><stop offset="1" stop-color="#04101f"/></linearGradient>
+        <linearGradient id="wgH" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.7" stop-color="#dbeafa"/><stop offset="1" stop-color="#a9cdf0"/></linearGradient>
+      </defs>
+      <path d="M72,20 L130,39.76 L130,89.92 Q130,141.6 72,172 Q14,141.6 14,89.92 L14,39.76 Z" fill="url(#edgeH)"/>
+      <path d="M72,20 L14,39.76 L14,89.92" fill="none" stroke="#6fb8ee" stroke-width="1.6" opacity="0.55" stroke-linejoin="round"/>
+      <path d="M72,29 L121,45.64 L121,87.88 Q121,131.4 72,157 Q23,131.4 23,87.88 L23,45.64 Z" fill="url(#faceH)"/>
+      <path d="M72,29 L72,166 L119,89.92 L119,43.76 Z" fill="#000" opacity="0.24"/>
+      <path d="M42,66 L51.6,66 L67.2,99.6 L67.2,79.44 L72,72.72 L76.8,79.44 L76.8,99.6 L92.4,66 L102,66 L88.8,122 L78,122 L72,92.88 L66,122 L55.2,122 Z" fill="url(#wgH)"/>
+      <text x="156" y="104" font-family="Georgia,serif" font-weight="700" font-size="54" letter-spacing="2" fill="#0d2b4e">WARDEN</text>
+      <rect x="159" y="117" width="322" height="4" rx="2" fill="#12579e"/>
+      <text x="161" y="141" font-family="Georgia,serif" font-style="italic" font-weight="400" font-size="15" letter-spacing="0.4" fill="#2f5074">Your partner for professional security solutions</text>
+    </svg>
+    <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="navlinks" id="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Warden</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge">CAMERAS · NETWORKING · CYBER SECURITY</span>
+    <h1>Complete site security, from one trusted provider.</h1>
+    <p>Cameras, networking and cyber security bundled into one simple weekly service, protecting construction sites and businesses across Sydney. One call. Response within 24 hours.</p>
+    <div class="btns">
+      <a href="#contact" class="btn">Get a Free Quote</a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><b>3-in-1</b>Cameras · Network · Cyber</div>
+    <div class="item"><b>Dual-SIM</b>Optus + Telstra failover</div>
+    <div class="item"><b>24hr</b>Response &amp; support</div>
+    <div class="item"><b>24/7</b>AI motion alerts</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>Everything your site needs, in one package</h2>
+      <p>No juggling multiple providers. Warden handles your cameras, your network and your cyber security under a single weekly agreement.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm0-5a8 8 0 00-8 8c0 5.25 8 11 8 11s8-5.75 8-11a8 8 0 00-8-8z"/></svg></div>
+        <h3>CCTV Cameras</h3>
+        <p>Solar, battery and hardwired HD cameras with AI person &amp; vehicle detection. Instant alerts to your phone the moment someone steps on site, with cloud recording included.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg></div>
+        <h3>Networking</h3>
+        <p>Professional-grade routers with dual-SIM 4G/5G: Optus primary, Telstra backup. Your site stays online even if one network drops. Managed remotely, always on.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+        <h3>Cyber Security</h3>
+        <p>Enterprise firewall, VPN and endpoint protection keep your site network and devices safe, and keep you compliant with the Australian Cyber Security Act 2024 &amp; Privacy Act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="kicker" style="color:var(--blue);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Why Warden</div>
+        <h2 style="font-size:34px;margin-bottom:30px">One provider. Zero headaches.</h2>
+        <ul class="why-list">
+          <li><div class="check">1</div><div><h4>Everything bundled</h4><p>Nobody else combines cameras, networking and cyber security for construction sites. One contract, one invoice, one number to call.</p></div></li>
+          <li><div class="check">2</div><div><h4>Never goes dark</h4><p>Dual-SIM failover across Optus and Telstra means your cameras keep running even if a whole network goes down.</p></div></li>
+          <li><div class="check">3</div><div><h4>Legally compliant</h4><p>We set you up to meet your obligations under the Cyber Security Act and Privacy Act: signage, secure networks, the lot.</p></div></li>
+          <li><div class="check">4</div><div><h4>24-hour service</h4><p>Most issues are fixed remotely. When a site visit's needed, we're there within 24 hours.</p></div></li>
+        </ul>
+      </div>
+      <div class="why-visual">
+        <h3>Built for the way sites really work</h3>
+        <p>Deterrent cameras, secure networks and cyber protection that scale from a single house build to a full commercial site.</p>
+        <div class="stat">15%↑</div>
+        <p style="margin-bottom:0">Construction site theft rose across NSW last year. One stolen generator costs more than two years of Warden protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="compliance">
+  <div class="wrap">
+    <h2>Is your site network actually secure?</h2>
+    <p>Most construction sites run on default passwords and open networks, a serious risk under the new Cyber Security Act. Warden closes those gaps and keeps you protected and compliant, without you lifting a finger.</p>
+    <a href="#contact" class="btn btn-ghost">Book a Free Security Check</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Simple Weekly Pricing</div>
+      <h2>Transparent plans, no surprises</h2>
+      <p>Pick what your site needs. Every plan is a simple weekly rate, billed by direct debit. Prices exclude GST.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price">
+        <h3>Starter</h3>
+        <div class="desc">Perfect for smaller residential builds.</div>
+        <div class="amount">$122.50<span>/week</span></div>
+        <ul>
+          <li>3 HD cameras + cloud storage</li>
+          <li>Dual-SIM 4G/5G modem</li>
+          <li>Basic cyber security</li>
+          <li>AI motion alerts to your phone</li>
+          <li>24-hour support</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+      <div class="price featured">
+        <h3>Site Pro</h3>
+        <div class="desc">Our most popular package for active sites.</div>
+        <div class="amount">$138<span>/week</span></div>
+        <ul>
+          <li>3 HD cameras + cloud storage</li>
+          <li>Dual-SIM 4G/5G modem</li>
+          <li>Intermediate cyber + 3 VPN users</li>
+          <li>Enterprise firewall &amp; VPN</li>
+          <li>Priority 24-hour support</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+      <div class="price">
+        <h3>Site Max</h3>
+        <div class="desc">Full coverage for larger commercial sites.</div>
+        <div class="amount">$186<span>/week</span></div>
+        <ul>
+          <li>6 HD cameras + cloud storage</li>
+          <li>Dual-SIM 4G/5G modem</li>
+          <li>Advanced cyber + 8 VPN users</li>
+          <li>Full network management</li>
+          <li>Priority 24-hour support</li>
+        </ul>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+    </div>
+    <p class="price-note">Custom packages available for multi-site builders and permanent fitouts. Installation waived on 6 &amp; 12-month agreements.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get a free quote</h3>
+        <p>Tell us about your site and we'll put together a package that fits. No pressure, no obligation. Just straight advice from a local team.</p>
+        <div class="contact-item">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/></svg></div>
+          <div><b>Call us</b><span><a href="tel:0421963643" style="color:var(--blue);font-weight:600">0421 963 643</a></span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div><b>Email</b><span>info@wardensecurity.com.au</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></div>
+          <div><b>Servicing</b><span>Sydney &amp; Greater Western Sydney</span></div>
+        </div>
+      </div>
+      <form action="https://formsubmit.co/info@wardensecurity.com.au" method="POST">
+        <input type="hidden" name="_subject" value="New quote request from wardensecurity.com.au">
+        <input type="hidden" name="_next" value="https://wardensecurity.com.au/#contact">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name" required>
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="Your phone number" required>
+        <label>Site location</label>
+        <input type="text" name="site_location" placeholder="Suburb or site address">
+        <label>What do you need?</label>
+        <textarea rows="4" name="message" placeholder="Tell us about your site: how many cameras, existing internet, etc."></textarea>
+        <button type="submit" class="btn">Request My Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg class="logo-foot" viewBox="0 0 600 190" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="edgeF" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#3a9be0"/><stop offset="0.45" stop-color="#12579e"/><stop offset="1" stop-color="#04162e"/></linearGradient>
+            <linearGradient id="faceF" x1="0" y1="0" x2="0.8" y2="0.9"><stop offset="0" stop-color="#123a6e"/><stop offset="1" stop-color="#04101f"/></linearGradient>
+            <linearGradient id="wgF" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#dbeafa"/><stop offset="1" stop-color="#a9cdf0"/></linearGradient>
+          </defs>
+          <path d="M72,20 L130,39.76 L130,89.92 Q130,141.6 72,172 Q14,141.6 14,89.92 L14,39.76 Z" fill="url(#edgeF)"/>
+          <path d="M72,29 L121,45.64 L121,87.88 Q121,131.4 72,157 Q23,131.4 23,87.88 L23,45.64 Z" fill="url(#faceF)"/>
+          <path d="M72,29 L72,166 L119,89.92 L119,43.76 Z" fill="#000" opacity="0.24"/>
+          <path d="M42,66 L51.6,66 L67.2,99.6 L67.2,79.44 L72,72.72 L76.8,79.44 L76.8,99.6 L92.4,66 L102,66 L88.8,122 L78,122 L72,92.88 L66,122 L55.2,122 Z" fill="url(#wgF)"/>
+          <text x="156" y="104" font-family="Georgia,serif" font-weight="700" font-size="54" letter-spacing="2" fill="#ffffff">WARDEN</text>
+          <rect x="159" y="117" width="322" height="4" rx="2" fill="#3a9be0"/>
+          <text x="161" y="141" font-family="Georgia,serif" font-style="italic" font-weight="400" font-size="15" letter-spacing="0.4" fill="#9db8d6">Your partner for professional security solutions</text>
+        </svg>
+        <p>Cameras, networking and cyber security for construction sites and businesses across Sydney.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">CCTV Cameras</a>
+        <a href="#services">Networking</a>
+        <a href="#services">Cyber Security</a>
+        <a href="#pricing">Permanent Fitouts</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#why">Why Warden</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Get a Quote</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:0421963643">0421 963 643</a>
+        <a href="mailto:info@wardensecurity.com.au">info@wardensecurity.com.au</a>
+        <a href="#contact">Sydney, NSW</a>
+        <a href="#contact">24-hour response</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Warden Security · wardensecurity.com.au · Servicing Sydney &amp; Greater Western Sydney
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
