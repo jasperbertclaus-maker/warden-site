@@ -38,8 +38,9 @@
   .burger{display:none;font-size:26px;background:none;border:none;color:var(--navy);cursor:pointer}
 
   /* ---------- Hero ---------- */
-  .hero{background:linear-gradient(135deg,#0d2b4e 0%,#12579e 60%,#1c6bc0 100%);color:#fff;padding:100px 0 90px;position:relative;overflow:hidden}
+  .hero{background-color:#0d2b4e;background-image:linear-gradient(135deg,rgba(13,43,78,.92) 0%,rgba(18,87,158,.82) 60%,rgba(28,107,192,.75) 100%),url('hero.jpg');background-size:cover;background-position:center;color:#fff;padding:100px 0 90px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(58,155,224,.35),transparent 65%);pointer-events:none}
+  .hero-art{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .hero-inner{position:relative;z-index:2;max-width:760px}
   .hero h1{color:#fff;font-size:48px;margin-bottom:20px}
   .hero p{font-size:20px;opacity:.94;margin-bottom:34px;max-width:620px}
@@ -70,17 +71,13 @@
 
   /* ---------- Why / features ---------- */
   .why{background:var(--bg-soft)}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .why-grid{display:grid;grid-template-columns:1fr;max-width:760px;margin:0 auto}
   .why-list{list-style:none}
   .why-list li{display:flex;gap:16px;margin-bottom:24px}
   .why-list .check{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
   .why-list h4{font-family:Georgia,serif;color:var(--navy);font-size:18px;margin-bottom:3px}
   .why-list p{color:var(--muted);font-size:15px}
-  .why-visual{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:16px;padding:48px;color:#fff;min-height:340px;display:flex;flex-direction:column;justify-content:center}
-  .why-visual h3{color:#fff;font-size:26px;margin-bottom:16px}
-  .why-visual p{opacity:.9;margin-bottom:26px}
-  .why-visual .stat{font-family:Georgia,serif;font-size:44px;color:var(--blue-bright);font-weight:700}
-
+        
   /* ---------- Compliance strip ---------- */
   .compliance{background:linear-gradient(135deg,#0d2b4e,#12579e);color:#fff;text-align:center}
   .compliance h2{color:#fff;font-size:32px;margin-bottom:16px}
@@ -129,10 +126,31 @@
   .foot-col a:hover{opacity:1}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;text-align:center;opacity:.6;font-size:13px}
 
+  /* ---------- Steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:step}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:34px 28px;position:relative}
+  .step .num{font-family:Georgia,serif;font-size:44px;font-weight:700;color:var(--blue-bright);line-height:1;margin-bottom:14px}
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* ---------- Reality (bad news) ---------- */
+  .reality{background:#081e3a;color:#fff}
+  .reality .section-head h2,.reality h2{color:#fff}
+  .reality .section-head p{color:#b8c9dd}
+  .reality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .fact{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:30px 26px}
+  .fact b{display:block;font-family:Georgia,serif;font-size:38px;color:var(--blue-bright);margin-bottom:8px}
+  .fact p{font-size:15px;color:#c9d7e8}
+  .reality .src{text-align:center;font-size:13px;color:#7e93ad;margin-top:26px}
+
+  /* ---------- Photo band ---------- */
+  .photo-band{padding:0}
+  .photo-band img{display:block;width:100%;max-height:440px;object-fit:cover}
+
   /* ---------- Responsive ---------- */
   @media(max-width:900px){
     .logo{height:76px}
-    .grid,.price-grid{grid-template-columns:1fr}
+    .grid,.price-grid,.steps,.reality-grid{grid-template-columns:1fr}
     .why-grid,.contact-grid{grid-template-columns:1fr}
     .hero h1{font-size:36px}
     .hero p{font-size:18px}
@@ -167,6 +185,7 @@
     <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     <nav class="navlinks" id="nav">
       <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
       <a href="#why">Why Warden</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
@@ -177,10 +196,68 @@
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="hero-art" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- skyline -->
+    <g fill="#081e3a" opacity="0.85">
+      <rect x="0" y="380" width="120" height="180"/>
+      <rect x="140" y="330" width="90" height="230"/>
+      <rect x="250" y="400" width="150" height="160"/>
+      <rect x="430" y="350" width="80" height="210"/>
+      <rect x="900" y="360" width="110" height="200"/>
+      <rect x="1030" y="310" width="80" height="250"/>
+      <rect x="1300" y="390" width="140" height="170"/>
+    </g>
+    <!-- unfinished building under the crane -->
+    <g stroke="#081e3a" stroke-width="6" opacity="0.9">
+      <line x1="1130" y1="560" x2="1130" y2="330"/>
+      <line x1="1210" y1="560" x2="1210" y2="330"/>
+      <line x1="1120" y1="330" x2="1220" y2="330"/>
+      <line x1="1120" y1="400" x2="1220" y2="400"/>
+      <line x1="1120" y1="470" x2="1220" y2="470"/>
+    </g>
+    <!-- tower crane -->
+    <g stroke="#061831" stroke-width="7" opacity="0.95" fill="none" stroke-linecap="round">
+      <line x1="700" y1="560" x2="700" y2="150"/>
+      <line x1="560" y1="185" x2="1010" y2="150"/>
+      <line x1="700" y1="150" x2="560" y2="185"/>
+      <line x1="700" y1="95" x2="700" y2="150"/>
+      <line x1="700" y1="95" x2="560" y2="185"/>
+      <line x1="700" y1="95" x2="900" y2="138"/>
+      <line x1="905" y1="152" x2="905" y2="300"/>
+      <line x1="895" y1="300" x2="915" y2="300"/>
+    </g>
+    <!-- site fence -->
+    <g stroke="#061831" stroke-width="5" opacity="0.9">
+      <line x1="0" y1="505" x2="1440" y2="505"/>
+      <line x1="0" y1="548" x2="1440" y2="548"/>
+      <line x1="40" y1="505" x2="40" y2="560"/><line x1="120" y1="505" x2="120" y2="560"/>
+      <line x1="200" y1="505" x2="200" y2="560"/><line x1="280" y1="505" x2="280" y2="560"/>
+      <line x1="360" y1="505" x2="360" y2="560"/><line x1="440" y1="505" x2="440" y2="560"/>
+      <line x1="520" y1="505" x2="520" y2="560"/><line x1="600" y1="505" x2="600" y2="560"/>
+      <line x1="680" y1="505" x2="680" y2="560"/><line x1="760" y1="505" x2="760" y2="560"/>
+      <line x1="840" y1="505" x2="840" y2="560"/><line x1="920" y1="505" x2="920" y2="560"/>
+      <line x1="1000" y1="505" x2="1000" y2="560"/><line x1="1080" y1="505" x2="1080" y2="560"/>
+      <line x1="1160" y1="505" x2="1160" y2="560"/><line x1="1240" y1="505" x2="1240" y2="560"/>
+      <line x1="1320" y1="505" x2="1320" y2="560"/><line x1="1400" y1="505" x2="1400" y2="560"/>
+    </g>
+    <!-- camera pole, front right -->
+    <g>
+      <rect x="1282" y="205" width="10" height="355" fill="#051426"/>
+      <line x1="1287" y1="215" x2="1330" y2="192" stroke="#051426" stroke-width="8" stroke-linecap="round"/>
+      <g transform="rotate(24 1338 188)">
+        <rect x="1306" y="172" width="66" height="30" rx="7" fill="#0a2240"/>
+        <rect x="1364" y="176" width="14" height="22" rx="4" fill="#123a6e"/>
+        <circle cx="1371" cy="187" r="5" fill="#3a9be0">
+          <animate attributeName="opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <path d="M1352 210 L1170 505 L1440 505 L1408 210 Z" fill="#3a9be0" opacity="0.07"/>
+    </g>
+  </svg>
   <div class="wrap hero-inner">
     <span class="badge">CAMERAS · NETWORKING · CYBER SECURITY</span>
-    <h1>Complete site security, from one trusted provider.</h1>
-    <p>Cameras, networking and cyber security bundled into one simple weekly service, protecting construction sites and businesses across Sydney. One call. Response within 24 hours.</p>
+    <h1>Cameras. Internet. Cyber. One number to call.</h1>
+    <p>We kit out construction sites across Sydney: cameras up from day one, internet that doesn't drop, cyber protection sorted. One weekly rate, one contract. Something plays up? You call us, and it's good to go same day.</p>
     <div class="btns">
       <a href="#contact" class="btn">Get a Free Quote</a>
       <a href="#services" class="btn btn-ghost">Our Services</a>
@@ -193,7 +270,7 @@
   <div class="wrap">
     <div class="item"><b>3-in-1</b>Cameras · Network · Cyber</div>
     <div class="item"><b>Dual-SIM</b>Optus + Telstra failover</div>
-    <div class="item"><b>24hr</b>Response &amp; support</div>
+    <div class="item"><b>Same-day</b>Response &amp; support</div>
     <div class="item"><b>24/7</b>AI motion alerts</div>
   </div>
 </div>
@@ -204,7 +281,6 @@
     <div class="section-head">
       <div class="kicker">What We Do</div>
       <h2>Everything your site needs, in one package</h2>
-      <p>No juggling multiple providers. Warden handles your cameras, your network and your cyber security under a single weekly agreement.</p>
     </div>
     <div class="grid">
       <div class="card">
@@ -226,6 +302,22 @@
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section style="background:var(--bg-soft)" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How It Works</div>
+      <h2>On your site in three steps</h2>
+      <p>From first call to live cameras, one team handles the whole job. No handballing between providers.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Contact us</h3><p>Call, email or fill in the form. Tell us where the site is and what's worrying you. Takes five minutes.</p></div>
+      <div class="step"><div class="num">2</div><h3>Site visit</h3><p>We walk the site with you, work out camera positions, check coverage and give you a fixed weekly price on the spot.</p></div>
+      <div class="step"><div class="num">3</div><h3>Set up &amp; live</h3><p>We install cameras, internet and cyber in one visit. Feed on your phone before we drive off. Done.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="why" id="why">
   <div class="wrap">
@@ -237,26 +329,33 @@
           <li><div class="check">1</div><div><h4>Everything bundled</h4><p>Nobody else combines cameras, networking and cyber security for construction sites. One contract, one invoice, one number to call.</p></div></li>
           <li><div class="check">2</div><div><h4>Never goes dark</h4><p>Dual-SIM failover across Optus and Telstra means your cameras keep running even if a whole network goes down.</p></div></li>
           <li><div class="check">3</div><div><h4>Legally compliant</h4><p>We set you up to meet your obligations under the Cyber Security Act and Privacy Act: signage, secure networks, the lot.</p></div></li>
-          <li><div class="check">4</div><div><h4>24-hour service</h4><p>Most issues are fixed remotely. When a site visit's needed, we're there within 24 hours.</p></div></li>
+          <li><div class="check">4</div><div><h4>Same-day service</h4><p>Most issues are fixed remotely, same day. When a site visit's needed, we're there as fast as we can get to you.</p></div></li>
         </ul>
-      </div>
-      <div class="why-visual">
-        <h3>Built for the way sites really work</h3>
-        <p>Deterrent cameras, secure networks and cyber protection that scale from a single house build to a full commercial site.</p>
-        <div class="stat">15%↑</div>
-        <p style="margin-bottom:0">Construction site theft rose across NSW last year. One stolen generator costs more than two years of Warden protection.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPLIANCE -->
-<section class="compliance">
+<!-- THE REALITY -->
+<section class="reality">
   <div class="wrap">
-    <h2>Is your site network actually secure?</h2>
-    <p>Most construction sites run on default passwords and open networks, a serious risk under the new Cyber Security Act. Warden closes those gaps and keeps you protected and compliant, without you lifting a finger.</p>
-    <a href="#contact" class="btn btn-ghost">Book a Free Security Check</a>
+    <div class="section-head">
+      <div class="kicker" style="color:var(--blue-bright)">The Reality</div>
+      <h2>This is what being unprotected costs</h2>
+      <p>According to the Australian Government.</p>
+    </div>
+    <div class="reality-grid">
+      <div class="fact"><b>1 in 2</b><p>Nearly half of online Australians were hit by some form of cybercrime in a single year.</p></div>
+      <div class="fact"><b>Every 6 min</b><p>A cybercrime is reported in Australia. Over 84,700 reports in a single year.</p></div>
+      <div class="fact"><b>$56,600</b><p>Average cost of one cybercrime report for an Australian small business. Up 14% in a year.</p></div>
+          </div>
+    <p class="src">Sources: <a href="https://www.cyber.gov.au/about-us/view-all-content/reports-and-statistics/annual-cyber-threat-report-2024-2025" target="_blank" rel="noopener" style="color:#9fcbf2;text-decoration:underline">Australian Signals Directorate, Annual Cyber Threat Report 2024&ndash;25</a> &middot; <a href="https://www.aic.gov.au/publications/sr/sr59" target="_blank" rel="noopener" style="color:#9fcbf2;text-decoration:underline">Australian Institute of Criminology, Cybercrime in Australia 2025</a></p>
   </div>
+</section>
+
+<!-- PHOTO -->
+<section class="photo-band">
+  <img src="site-photo.jpg" alt="Warden Security install on a Sydney construction site" onerror="this.parentElement.style.display='none'">
 </section>
 
 <!-- PRICING -->
@@ -277,7 +376,7 @@
           <li>Dual-SIM 4G/5G modem</li>
           <li>Basic cyber security</li>
           <li>AI motion alerts to your phone</li>
-          <li>24-hour support</li>
+          <li>Same-day support</li>
         </ul>
         <a href="#contact" class="btn">Get Started</a>
       </div>
@@ -290,7 +389,7 @@
           <li>Dual-SIM 4G/5G modem</li>
           <li>Intermediate cyber + 3 VPN users</li>
           <li>Enterprise firewall &amp; VPN</li>
-          <li>Priority 24-hour support</li>
+          <li>Priority same-day support</li>
         </ul>
         <a href="#contact" class="btn">Get Started</a>
       </div>
@@ -303,7 +402,7 @@
           <li>Dual-SIM 4G/5G modem</li>
           <li>Advanced cyber + 8 VPN users</li>
           <li>Full network management</li>
-          <li>Priority 24-hour support</li>
+          <li>Priority same-day support</li>
         </ul>
         <a href="#contact" class="btn">Get Started</a>
       </div>
@@ -389,7 +488,7 @@
         <a href="tel:0421963643">0421 963 643</a>
         <a href="mailto:info@wardensecurity.com.au">info@wardensecurity.com.au</a>
         <a href="#contact">Sydney, NSW</a>
-        <a href="#contact">24-hour response</a>
+        <a href="#contact">Same-day response</a>
       </div>
     </div>
     <div class="foot-bottom">
