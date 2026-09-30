@@ -433,9 +433,12 @@
           <div><b>Servicing</b><span>Sydney &amp; Greater Western Sydney</span></div>
         </div>
       </div>
-      <form action="https://formsubmit.co/info@wardensecurity.com.au" method="POST">
-        <input type="hidden" name="_subject" value="New quote request from wardensecurity.com.au">
-        <input type="hidden" name="_next" value="https://wardensecurity.com.au/#contact">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="0d02a53d-6c99-448d-be5d-793d3494c79f">
+        <input type="hidden" name="subject" value="New quote request from wardensecurity.com.au">
+        <input type="hidden" name="from_name" value="Warden Security website">
+        <input type="hidden" name="redirect" value="https://wardensecurity.com.au/thanks.html">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <label>Name</label>
         <input type="text" name="name" placeholder="Your name" required>
         <label>Phone</label>
