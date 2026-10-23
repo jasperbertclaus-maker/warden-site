@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Warden Class Sign-up</title>
+<meta name="description" content="Free one-day sales class in Sydney. Hit the standard and secure a sales job interview.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&display=swap">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Warden home"><span class="word"><span class="name">W<svg class="a" viewBox="0 0 72 78" aria-hidden="true"><polyline points="4,78 36,4 68,78" fill="none" stroke="currentColor" stroke-width="8"/><path d="M36 40 L44 50 L36 60 L28 50 Z" fill="#C9A961"/></svg>RDEN</span><span class="tag">Sales recruitment and training</span></span></a>
+    <nav class="nav" aria-label="Main"><a class="link" href="index.html">Home</a><a class="link" href="class.html">Free class</a><a class="link" href="experienced.html">Experienced</a><a class="link" href="employers.html">Employers</a><a class="link" href="contact.html">Contact</a><a class="btn small" href="signup.html">Sign up free</a></nav>
+    <details class="m-menu"><summary>Menu</summary><nav class="m-menu-list" aria-label="Pages"><a href="index.html">Home</a><a href="class.html">Free class</a><a href="experienced.html">Experienced</a><a href="employers.html">Employers</a><a href="contact.html">Contact</a><a href="signup.html" aria-current="page">Sign up</a></nav></details>
+  </div>
+</header>
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Sign up</p>
+      <h1>Sign up with Warden</h1>
+      <p>New to sales? Book the free class day. Already selling? Tell us about your experience and we will line up interviews.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <form class="form-card" id="signup-form" novalidate>
+        <fieldset class="track">
+          <legend>What are you signing up for?</legend>
+          <label for="track-class"><input type="radio" name="track" id="track-class" value="Free class day + coaching" checked><span><b>Free class day and coaching</b><small>New to sales or less than a year in it</small></span></label>
+          <label for="track-exp"><input type="radio" name="track" id="track-exp" value="Experienced: interviews"><span><b>Interviews for experienced salespeople</b><small>1 year or more in a sales role</small></span></label>
+        </fieldset>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" autocomplete="name" required>
+          <span class="err" id="name-err" hidden>Enter your full name.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="04xx xxx xxx" required>
+          <span class="err" id="phone-err" hidden>Enter a phone number we can call, for example 0412 345 678.</span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" required>
+          <span class="err" id="email-err" hidden>Enter an email address like name@example.com.</span>
+        </div>
+        <div class="field">
+          <label for="rights">Working rights in Australia</label>
+          <select id="rights" required>
+            <option value="">Choose one</option>
+            <option>Australian citizen</option>
+            <option>Permanent resident</option>
+            <option>New Zealand citizen</option>
+            <option>Working holiday visa</option>
+            <option>Other visa with full work rights</option>
+            <option>Student visa (limited hours)</option>
+            <option>No work rights yet</option>
+          </select>
+          <span class="err" id="rights-err" hidden>Choose your working rights.</span>
+        </div>
+        <div class="field">
+          <label for="invited">Who invited you? <small>(optional)</small></label>
+          <input id="invited" type="text" autocomplete="off" placeholder="Your friend's full name">
+        </div>
+        <div class="field" id="exp-fields" hidden>
+          <label for="years">Years in sales</label>
+          <select id="years">
+            <option value="">Choose one</option>
+            <option>1 to 2 years</option>
+            <option>3 to 5 years</option>
+            <option>More than 5 years</option>
+          </select>
+          <span class="err" id="years-err" hidden>Choose how long you have worked in sales.</span>
+          <label for="sold" style="margin-top:10px">What have you sold?</label>
+          <input id="sold" type="text" placeholder="For example: pharma, solar, software, retail">
+          <span class="err" id="sold-err" hidden>Tell us what you have sold.</span>
+        </div>
+        <label class="consent" for="consent">
+          <input id="consent" type="checkbox" required>
+          <span>I agree to Warden contacting me about classes, coaching and job interviews.</span>
+        </label>
+        <span class="err" id="consent-err" hidden>Tick the box so we can contact you.</span>
+        <p class="privacy-note">We only use your details to contact you about the class and jobs. We never sell them.</p>
+        <input type="checkbox" id="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <button class="btn" type="submit" id="submit-btn">Sign me up</button>
+        <p class="status" id="form-status" role="status" hidden></p>
+      </form>
+      <div class="prose">
+        <p class="eyebrow">What happens next</p>
+        <h2>We call you within a few days</h2>
+        <h3>Free class day</h3>
+        <ul class="ticks">
+          <li>We confirm your spot and the class date by email</li>
+          <li>You attend the free class day</li>
+          <li>Pass the final pitch and you secure a sales job interview</li>
+          <li>Evening coaching starts once you are working</li>
+        </ul>
+        <div class="friend-note">
+          <h3>Bring a friend</h3>
+          <p>If your friend passes and gets hired, you both get 2 free coaching sessions together with Jasper. Ask them to put your name in the "Who invited you?" box.</p>
+        </div>
+        <h3>Experienced</h3>
+        <ul class="ticks">
+          <li>We call to talk about what you have sold and what you want next</li>
+          <li>We present you to companies hiring experienced reps</li>
+          <li>We line up interviews and prepare you for each one</li>
+        </ul>
+        <p class="phone"><span>Prefer to call?</span><b>0421 963 643</b></p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  // Paste your Web3Forms access key here (made with the new Warden email address).
+  var ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+  function $(id){ return document.getElementById(id); }
+  var form = $("signup-form"), statusEl = $("form-status"), btn = $("submit-btn");
+  var expBox = $("exp-fields");
+  function isExp(){ return $("track-exp").checked; }
+  function syncTrack(){ expBox.hidden = !isExp(); }
+  $("track-class").addEventListener("change", syncTrack);
+  $("track-exp").addEventListener("change", syncTrack);
+  if (location.hash === "#experienced") { $("track-exp").checked = true; }
+  syncTrack();
+  function check(id, ok){
+    $(id).setAttribute("aria-invalid", ok ? "false" : "true");
+    $(id + "-err").hidden = ok;
+    return ok;
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    statusEl.hidden = true;
+    var name = $("name").value.trim();
+    var phone = $("phone").value.trim();
+    var email = $("email").value.trim();
+    var rights = $("rights").value;
+    var exp = isExp();
+    var years = $("years").value, sold = $("sold").value.trim();
+    var invited = $("invited").value.trim();
+    var ids = ["name","phone","email","rights","years","sold","consent"];
+    var ok = [
+      check("name", name.length >= 2),
+      check("phone", phone.replace(/[^\d]/g, "").length >= 8),
+      check("email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+      check("rights", rights !== ""),
+      check("years", !exp || years !== ""),
+      check("sold", !exp || sold.length >= 2),
+      check("consent", $("consent").checked)
+    ];
+    for (var i = 0; i < ok.length; i++) {
+      if (!ok[i]) { $(ids[i]).focus(); return; }
+    }
+    if (ACCESS_KEY.indexOf("YOUR_") === 0) {
+      statusEl.textContent = "This form is not connected yet, so nothing was sent. Call 0421 963 643 to book your spot.";
+      statusEl.hidden = false;
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Accept": "application/json"},
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: (exp ? "Experienced candidate: " : "Class day sign-up: ") + name,
+        from_name: "Warden website",
+        track: exp ? "Experienced: interviews" : "Free class day + coaching",
+        name: name, phone: phone, email: email, working_rights: rights,
+        years_in_sales: exp ? years : "", has_sold: exp ? sold : "",
+        invited_by: invited,
+        botcheck: $("botcheck").checked
+      })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if (!data.success) throw new Error("failed");
+      var first = document.createElement("span");
+      first.textContent = name.split(" ")[0];
+      form.innerHTML = '<div class="done"><p class="eyebrow">Got it</p><h3>Thanks, <span id="fn"></span>.</h3><p>' + (exp ? 'We will call you within a few days to talk about your experience and the roles we have.' : 'We will email you the date and location of the next class day.') + ' Questions before then? Call 0421 963 643.</p></div>';
+      $("fn").textContent = first.textContent;
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = "Sign me up";
+      statusEl.textContent = "Your sign-up did not go through. Check your connection and try again, or call 0421 963 643.";
+      statusEl.hidden = false;
+    });
+  });
+})();
+</script>
+<footer class="site">
+  <div class="wrap">
+    <span>Warden · Sales recruitment and training · Sydney</span>
+    <span><a href="class.html">Free class</a><a href="employers.html">Employers</a><a href="contact.html">Contact</a><a href="signup.html">Sign up</a>0421 963 643</span>
+  </div>
+</footer>
+</body>
+</html>

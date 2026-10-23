@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact Warden</title>
+<meta name="description" content="Free one-day sales class in Sydney. Hit the standard and secure a sales job interview.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&display=swap">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Warden home"><span class="word"><span class="name">W<svg class="a" viewBox="0 0 72 78" aria-hidden="true"><polyline points="4,78 36,4 68,78" fill="none" stroke="currentColor" stroke-width="8"/><path d="M36 40 L44 50 L36 60 L28 50 Z" fill="#C9A961"/></svg>RDEN</span><span class="tag">Sales recruitment and training</span></span></a>
+    <nav class="nav" aria-label="Main"><a class="link" href="index.html">Home</a><a class="link" href="class.html">Free class</a><a class="link" href="experienced.html">Experienced</a><a class="link" href="employers.html">Employers</a><a class="link" href="contact.html" aria-current="page">Contact</a><a class="btn small" href="signup.html">Sign up free</a></nav>
+    <details class="m-menu"><summary>Menu</summary><nav class="m-menu-list" aria-label="Pages"><a href="index.html">Home</a><a href="class.html">Free class</a><a href="experienced.html">Experienced</a><a href="employers.html">Employers</a><a href="contact.html" aria-current="page">Contact</a><a href="signup.html">Sign up</a></nav></details>
+  </div>
+</header>
+<div class="cd-bar countdown" data-deadline="2026-11-25T23:59:00+11:00" role="region" aria-label="Sign-up countdown">
+  <div class="wrap">
+    <p class="cd-label">Sign-ups close in</p>
+    <div class="cd-units" hidden>
+      <span><b data-u="d">0</b><small>days</small></span>
+      <span><b data-u="h">00</b><small>hrs</small></span>
+      <span><b data-u="m">00</b><small>min</small></span>
+      <span><b data-u="s">00</b><small>sec</small></span>
+    </div>
+    <a class="btn" href="signup.html">Claim my free spot</a>
+  </div>
+</div>
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to Warden</h1>
+      <p>Questions about the free class, interviews or hiring through us. Call, or send a message and we will get back to you.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div class="prose">
+        <div class="contact-block">
+          <p class="eyebrow">Phone</p>
+          <p class="big"><b>0421 963 643</b></p>
+          <p>Jasper answers this number. If he is teaching, leave a message and he will call you back.</p>
+        </div>
+        <div class="contact-block">
+          <p class="eyebrow">Where</p>
+          <p class="big">Sydney, NSW</p>
+          <p>Class days run in Sydney. We send the exact location when we confirm your spot.</p>
+        </div>
+        <div class="contact-block">
+          <p class="eyebrow">Want to join a class?</p>
+          <p><a href="signup.html">Use the sign-up form</a> instead. It books your spot faster.</p>
+        </div>
+      </div>
+
+      <form class="form-card" id="contact-form" novalidate>
+        <fieldset class="track">
+          <legend>I am</legend>
+          <label for="who-cand"><input type="radio" name="who" id="who-cand" value="Candidate" checked><span><b>Looking for a sales job</b></span></label>
+          <label for="who-emp"><input type="radio" name="who" id="who-emp" value="Employer"><span><b>An employer hiring salespeople</b></span></label>
+          <label for="who-other"><input type="radio" name="who" id="who-other" value="Other"><span><b>Something else</b></span></label>
+        </fieldset>
+        <div class="field">
+          <label for="c-name">Full name</label>
+          <input id="c-name" type="text" autocomplete="name" required>
+          <span class="err" id="c-name-err" hidden>Enter your full name.</span>
+        </div>
+        <div class="field" id="company-field" hidden>
+          <label for="c-company">Company</label>
+          <input id="c-company" type="text" autocomplete="organization">
+          <span class="err" id="c-company-err" hidden>Enter your company name.</span>
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone number</label>
+          <input id="c-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="04xx xxx xxx" required>
+          <span class="err" id="c-phone-err" hidden>Enter a phone number we can call, for example 0412 345 678.</span>
+        </div>
+        <div class="field">
+          <label for="c-email">Email</label>
+          <input id="c-email" type="email" autocomplete="email" required>
+          <span class="err" id="c-email-err" hidden>Enter an email address like name@example.com.</span>
+        </div>
+        <div class="field">
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" rows="5" required></textarea>
+          <span class="err" id="c-msg-err" hidden>Write a short message so we know how to help.</span>
+        </div>
+        <p class="privacy-note">We only use your details to reply to you. We never sell them.</p>
+        <input type="checkbox" id="c-botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <button class="btn" type="submit" id="c-submit">Send message</button>
+        <p class="status" id="c-status" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  // Paste your Web3Forms access key here (the same key as on signup.html).
+  var ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+  function $(id){ return document.getElementById(id); }
+  var form = $("contact-form"), statusEl = $("c-status"), btn = $("c-submit");
+  function isEmp(){ return $("who-emp").checked; }
+  function sync(){ $("company-field").hidden = !isEmp(); }
+  var radios = ["who-cand","who-emp","who-other"];
+  for (var r = 0; r < radios.length; r++) { $(radios[r]).addEventListener("change", sync); }
+  if (location.hash === "#employer") { $("who-emp").checked = true; }
+  sync();
+  function check(id, ok){
+    $(id).setAttribute("aria-invalid", ok ? "false" : "true");
+    $(id + "-err").hidden = ok;
+    return ok;
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    statusEl.hidden = true;
+    var who = "Other";
+    for (var r = 0; r < radios.length; r++) { if ($(radios[r]).checked) who = $(radios[r]).value; }
+    var name = $("c-name").value.trim();
+    var company = $("c-company").value.trim();
+    var phone = $("c-phone").value.trim();
+    var email = $("c-email").value.trim();
+    var msg = $("c-msg").value.trim();
+    var ids = ["c-name","c-company","c-phone","c-email","c-msg"];
+    var ok = [
+      check("c-name", name.length >= 2),
+      check("c-company", !isEmp() || company.length >= 2),
+      check("c-phone", phone.replace(/[^\d]/g, "").length >= 8),
+      check("c-email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+      check("c-msg", msg.length >= 5)
+    ];
+    for (var i = 0; i < ok.length; i++) {
+      if (!ok[i]) { $(ids[i]).focus(); return; }
+    }
+    if (ACCESS_KEY.indexOf("YOUR_") === 0) {
+      statusEl.textContent = "This form is not connected yet, so nothing was sent. Call 0421 963 643 instead.";
+      statusEl.hidden = false;
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Accept": "application/json"},
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "Website message (" + who + "): " + name,
+        from_name: "Warden website",
+        type: who, name: name, company: isEmp() ? company : "", phone: phone, email: email, message: msg,
+        botcheck: $("c-botcheck").checked
+      })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if (!data.success) throw new Error("failed");
+      form.innerHTML = '<div class="done"><p class="eyebrow">Message sent</p><h3>Thanks, <span id="c-fn"></span>.</h3><p>We will get back to you within a few days. Need an answer sooner? Call 0421 963 643.</p></div>';
+      $("c-fn").textContent = name.split(" ")[0];
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = "Send message";
+      statusEl.textContent = "Your message did not go through. Check your connection and try again, or call 0421 963 643.";
+      statusEl.hidden = false;
+    });
+  });
+})();
+</script>
+<footer class="site">
+  <div class="wrap">
+    <span>Warden · Sales recruitment and training · Sydney</span>
+    <span><a href="class.html">Free class</a><a href="employers.html">Employers</a><a href="contact.html">Contact</a><a href="signup.html">Sign up</a>0421 963 643</span>
+  </div>
+</footer>
+<script src="countdown.js" defer></script>
+</body>
+</html>
