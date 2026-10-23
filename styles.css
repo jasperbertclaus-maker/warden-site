@@ -451,3 +451,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .steps-big p{font-size:.95rem}
   .steps-big .n{font-size:3rem}
 }
+
+/* Email links */
+.contact-block .big a,.phone a{overflow-wrap:anywhere}
+.phone a{font-size:var(--s0)}
+footer.site a{white-space:nowrap;display:inline-block}
