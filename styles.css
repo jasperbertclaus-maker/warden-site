@@ -456,3 +456,52 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .contact-block .big a,.phone a{overflow-wrap:anywhere}
 .phone a{font-size:var(--s0)}
 footer.site a{white-space:nowrap;display:inline-block}
+
+/* Landing page: two path boxes (juniors / experienced) */
+.hero .copy:has(.paths){max-width:46rem}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.path{display:flex;flex-direction:column;gap:10px;padding:24px;background:rgba(18,11,28,.72);border:1px solid rgba(217,180,94,.45);border-radius:4px;color:#FFFFFF;text-decoration:none;transition:border-color .15s,background .15s,transform .15s}
+.path:hover,.path:focus-visible{border-color:#D9B45E;background:rgba(42,23,69,.85);transform:translateY(-2px)}
+.path-tag{font-size:var(--s-1);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D9B45E}
+.path h2{font-size:var(--s2);margin:0;color:#FFFFFF}
+.path p{margin:0;color:#E4DDF2}
+.path-note{font-size:var(--s-1);color:#ABA2BC}
+.path-go{margin-top:auto;padding-top:6px;font-weight:700;color:#D9B45E}
+@media (max-width:640px){.paths{grid-template-columns:1fr}}
+
+/* Front page: story + three reasons */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:start}
+.story .sec-head{margin-bottom:0}
+.story-text p{font-size:var(--s1);color:var(--ink)}
+.story-text .story-punch{font-weight:700}
+.story-text .story-sign{font-size:var(--s0);color:var(--gold-text);font-style:italic}
+@media (max-width:860px){.story{grid-template-columns:1fr;gap:20px}}
+.steps.steps-3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.steps.steps-3{grid-template-columns:1fr}.steps.steps-3 .step,.steps.steps-3 .step + .step{padding-left:0;border-left:0;border-top:1px solid var(--line)}.steps.steps-3 .step:first-child{border-top:0}}
+.ctas-2{display:flex;flex-wrap:wrap;gap:12px}
+.cta-strip .btn.line{color:#FFFFFF}
+
+/* Front page hero: brand graphic instead of a photo */
+.hero:has(.hero-art){background:radial-gradient(ellipse 70% 90% at 78% 45%,#2A1745 0%,#120B1C 70%)}
+.hero:has(.hero-art)::after{display:none}
+.hero-art{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-art .dmd{position:absolute;border:1.5px solid rgba(201,169,97,.22);transform:rotate(45deg)}
+.hero-art .d1{width:420px;height:420px;right:-120px;top:-180px}
+.hero-art .d2{width:260px;height:260px;right:260px;bottom:-150px;border-color:rgba(109,40,217,.45)}
+.hero-art .d3{width:120px;height:120px;right:120px;bottom:120px;border-color:rgba(201,169,97,.18)}
+.hero-art .d4{width:640px;height:640px;left:-380px;top:40px;border-color:rgba(109,40,217,.25)}
+.hero-art .big-a{position:absolute;right:9%;top:50%;transform:translateY(-50%);width:clamp(180px,24vw,340px);height:auto;color:rgba(255,255,255,.12);overflow:visible}
+@media (max-width:1100px){.hero-art .big-a{opacity:.5}}
+@media (max-width:760px){.hero-art .big-a{display:none}.hero:has(.hero-art) .wrap{padding-top:96px}}
+
+/* Free class page head with Jasper's photo */
+.photo-head{position:relative;overflow:hidden}
+.photo-head .wrap{position:relative;z-index:1;padding-block:clamp(64px,9vw,120px) clamp(56px,7vw,96px)}
+.photo-head .ph-img{position:absolute;top:0;right:0;height:100%;width:52%;object-fit:cover;object-position:40% 42%}
+.photo-head::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#120B1C 0%,#120B1C 46%,rgba(18,11,28,.55) 58%,rgba(18,11,28,.1) 80%,rgba(18,11,28,.05) 100%)}
+.photo-head h1,.photo-head p{max-width:34rem}
+@media (max-width:760px){
+  .photo-head .ph-img{width:100%;height:300px;object-position:40% 42%}
+  .photo-head::after{background:linear-gradient(180deg,rgba(18,11,28,.1) 0,rgba(18,11,28,.25) 160px,#120B1C 300px)}
+  .photo-head .wrap{padding-top:270px}
+}
